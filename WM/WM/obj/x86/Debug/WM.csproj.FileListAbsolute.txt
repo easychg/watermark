@@ -1,0 +1,7 @@
+C:\版本控制文件夹\watermark\WM\WM\bin\Debug\WM.exe
+C:\版本控制文件夹\watermark\WM\WM\bin\Debug\WM.pdb
+C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.Form1.resources
+C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.Properties.Resources.resources
+C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.csproj.GenerateResource.Cache
+C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.exe
+C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.pdb
