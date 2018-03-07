@@ -5,3 +5,5 @@ C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.Properties.Resources.r
 C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.csproj.GenerateResource.Cache
 C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.exe
 C:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.pdb
+F:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.exe
+F:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.pdb
