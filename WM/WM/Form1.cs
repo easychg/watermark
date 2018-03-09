@@ -18,7 +18,7 @@ namespace WM
         {
             InitializeComponent();
             Form.CheckForIllegalCrossThreadCalls = false;
-            listExtention.AddRange(new string[] { ".jpg", ".gif", ".png" });
+            listExtention.AddRange(new string[] { ".jpg", ".gif", ".png",".bmp",".jpeg" });
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
