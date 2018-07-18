@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using System.Management;
 
 namespace WM
 {
@@ -17,6 +18,7 @@ namespace WM
         public Form1()
         {
             InitializeComponent();
+            string aa = getHardDiskID();
             Form.CheckForIllegalCrossThreadCalls = false;
             listExtention.AddRange(new string[] { ".jpg", ".gif", ".png",".bmp",".jpeg" });
         }
@@ -53,22 +55,16 @@ namespace WM
             th1.Start(para);
             return th1;
         }
-        /// <summary>
-        /// 允许线程之间进行操作
-        /// </summary>
+        //允许线程之间进行操作
         public static void OprateBetweenThread()
         {
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
         }
 
-        /// <summary>
-        /// 无参的、返回值为void的委托，可以用来做参数名
-        /// </summary>
+        // 无参的、返回值为void的委托，可以用来做参数名
         public delegate void VoidFunction();
 
-        /// <summary>
-        /// 有一个参数的、返回值为void的委托，可以用来做参数名
-        /// </summary>
+        //有一个参数的、返回值为void的委托，可以用来做参数名
         public delegate void ParamFunction(object para);
 
 
@@ -135,7 +131,7 @@ namespace WM
                     try
                     {
 
-                        MakeWaterPic(s, "", markPicPath, "");
+                        MakeWaterPic(s, "123", markPicPath, "");
                         success++;
                     }
                     catch (Exception er)
@@ -173,29 +169,21 @@ namespace WM
             {
                 return "-1";//文件不存在
             }
-
             string extension = Path.GetExtension(SourcePicPath).ToLower();//后缀
             if (listExtention.Contains(extension) == false) throw new Exception("不允许的后缀:" + SourcePicPath + "\n");
-            string fileName = "";
-            if (SaveName.Trim() != "") fileName = SaveName;
-            else fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
 
-            //加文字水印
             System.Drawing.Image image = System.Drawing.Image.FromFile(SourcePicPath, true);
             int imgwidth = image.Width;
             int imgheight = image.Height;
             using (System.Drawing.Bitmap bitmap = new Bitmap(image.Width, image.Height))
             {
-
                 using (System.Drawing.Graphics g = System.Drawing.Graphics.FromImage(bitmap))//
                 {
                     g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.High;
                     g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                     g.Clear(System.Drawing.Color.Transparent);
                     g.DrawImage(image, 0, 0, imgwidth, imgheight);//画上原图片
-
                     image.Dispose();
-                    //g.DrawImage(image, 0, 0, image.Width, image.Height);
                     if (WaterText != "")
                     {
                         Font f = new Font("Verdana", 32);
@@ -213,8 +201,7 @@ namespace WM
                     {
                         File.Delete(SourcePicPath);
                     }
-                    //保存加水印过后的图片,删除原始图片
-                    // string newPath = fileName + extension;
+                    
                     switch (extension)
                     {
                         case ".jpg":
@@ -240,8 +227,6 @@ namespace WM
             }
 
             return "1";
-            // Response.Redirect(newPath);
-            //}
         }
         
         private void btnExec_Click(object sender, EventArgs e)
@@ -251,8 +236,22 @@ namespace WM
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             //txtDir.Text = ConfigFile.Instanse["txtDir"];
             //txtMark.Text = ConfigFile.Instanse["txtMark"];
         }
+        private string getHardDiskID()
+        {
+
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_PhysicalMedia");
+            string strHardDiskID = null;
+            foreach (ManagementObject mo in searcher.Get())
+            {
+                strHardDiskID = mo["SerialNumber"].ToString().Trim();
+                break;
+            }
+            return strHardDiskID;
+        }
+
     }
 }

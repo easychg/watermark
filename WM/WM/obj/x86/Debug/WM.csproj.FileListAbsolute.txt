@@ -13,3 +13,13 @@ F:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.csprojResolveAssemblyR
 F:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.Form1.resources
 F:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.Properties.Resources.resources
 F:\版本控制文件夹\watermark\WM\WM\obj\x86\Debug\WM.csproj.GenerateResource.Cache
+E:\git\watermark\WM\WM\obj\x86\Debug\WM.exe
+E:\git\watermark\WM\WM\obj\x86\Debug\WM.pdb
+E:\git\watermark\WM\WM\bin\Debug\WM.exe
+E:\git\watermark\WM\WM\bin\Debug\WM.pdb
+E:\git\watermark\WM\WM\obj\x86\Debug\WM.csprojResolveAssemblyReference.cache
+E:\git\watermark\WM\WM\obj\x86\Debug\WM.Form1.resources
+E:\git\watermark\WM\WM\obj\x86\Debug\WM.Properties.Resources.resources
+E:\git\watermark\WM\WM\obj\x86\Debug\WM.csproj.GenerateResource.Cache
+E:\git\watermark\WM\WM\obj\x86\Debug\Interop.DMVIEW2Lib.dll
+E:\git\watermark\WM\WM\obj\x86\Debug\WM.csproj.ResolveComReference.cache
